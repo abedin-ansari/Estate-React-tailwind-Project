@@ -1,12 +1,12 @@
 import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "@utils/firebase.js";
+import { auth } from "../../utils/firebase";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
-import { checkValidateData } from "@utils/validate.js";
+import { checkValidateData } from "../../utils/validate";
 import { toast, ToastContainer } from "react-toastify";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { assets } from "@assets/assets.js";
+import { assets } from "../assets/assets";
 import LogoutButton from "./LogoutButton";
 import { useNavigate } from "react-router-dom";
-import { auth } from "@utils/firebase.js";
+import { auth } from "../../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
 const Navbar = () => {
