@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { assets, projectsData } from "../assets/assets.js";
+import { assets, projectsData } from "../assets/assets";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
