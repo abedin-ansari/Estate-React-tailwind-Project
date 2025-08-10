@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
 import LogoutButton from "./LogoutButton";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../../utils/firebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
+    // Manage body scroll on mobile menu toggle
     if (showMobileMenu) {
       document.body.style.overflow = "hidden";
     } else {
@@ -16,10 +22,21 @@ const Navbar = () => {
     };
   }, [showMobileMenu]);
 
+  useEffect(() => {
+    // Listen for Firebase auth state changes
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, []);
+
   return (
     <div className="absolute top-0 left-0 w-full z-10">
       <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent">
+        {/* Logo */}
         <img src={assets.logo} alt="logo" />
+
+        {/* Desktop Menu */}
         <ul className="hidden md:flex gap-7 text-white text-lg">
           <a href="#Header" className="cursor-pointer hover:bg-gray-500">
             Home
@@ -34,10 +51,20 @@ const Navbar = () => {
             Testimonials
           </a>
         </ul>
-        <button className="hidden md:block bg-white px-8 py-2 rounded-full">
-          Sign-up
-        </button>
-        <LogoutButton />
+
+        {/* Conditionally render Sign-up or Logout button */}
+        {user ? (
+          <LogoutButton />
+        ) : (
+          <button
+            onClick={() => navigate("/login")}
+            className="hidden md:block bg-white px-8 py-2 rounded-full cursor-pointer hover:bg-gray-200"
+          >
+            Sign-up
+          </button>
+        )}
+
+        {/* Mobile menu icon */}
         <img
           src={assets.menu_icon}
           alt="menu"
@@ -45,8 +72,8 @@ const Navbar = () => {
           onClick={() => setShowMobileMenu(true)}
         />
       </div>
-      {/* -------- Mobile Menu -------- */}
 
+      {/* -------- Mobile Menu -------- */}
       <div
         className={`md:hidden ${
           showMobileMenu ? "fixed w-full" : "h-0 w-0"
@@ -55,11 +82,12 @@ const Navbar = () => {
         <div className="flex justify-end p-6 cursor-pointer">
           <img
             src={assets.cross_icon}
-            alt=""
-            className="w-6 "
+            alt="close"
+            className="w-6"
             onClick={() => setShowMobileMenu(false)}
           />
         </div>
+
         <ul className="flex flex-col items-center gap-2 mt-5 mx-5 text-lg font-medium">
           <a
             href="#Header"
@@ -89,6 +117,21 @@ const Navbar = () => {
           >
             Testimonials
           </a>
+
+          {/* Mobile Sign-up or Logout button */}
+          {user ? (
+            <LogoutButton />
+          ) : (
+            <button
+              onClick={() => {
+                setShowMobileMenu(false);
+                navigate("/login");
+              }}
+              className="bg-white px-8 py-2 rounded-full mt-4"
+            >
+              Sign-up
+            </button>
+          )}
         </ul>
       </div>
     </div>

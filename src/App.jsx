@@ -1,40 +1,10 @@
-// import React from "react";
-// import Header from "./components/Header";
-// import About from "./components/About";
-// import Projects from "./components/Projects";
-// import Testimonials from "./components/Testimonials";
-// import Contact from "./components/Contact";
-// import { ToastContainer } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
-// import Footer from "./components/Footer";
-
-// const App = () => {
-//   return (
-//     <div className="w-full overflow-hidden">
-//       <ToastContainer />
-//       <Header />
-//       <About />
-//       <Projects />
-//       <Testimonials />
-//       <Contact />
-//       <Footer />
-//     </div>
-//   );
-// };
-
-// export default App;
-
 import React, { useEffect, useState } from "react";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged } from "firebase/auth";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Login from "./components/Login";
+import ResetPassword from "./components/ResetPassword";
 import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
@@ -42,9 +12,9 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-const MainApp = () => (
+const MainApp = ({ user }) => (
   <>
-    <Header />
+    <Header user={user} />
     <About />
     <Projects />
     <Testimonials />
@@ -73,14 +43,14 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/login"
-          element={!user ? <Login /> : <Navigate to="/" />}
-        />
-        <Route
-          path="/*"
-          element={user ? <MainApp /> : <Navigate to="/login" />}
-        />
+        {/* Public home page */}
+        <Route path="/" element={<MainApp user={user} />} />
+
+        {/* Login page */}
+        <Route path="/login" element={<Login />} />
+
+        {/* Password reset page */}
+        <Route path="/reset-password" element={<ResetPassword />} />
       </Routes>
     </Router>
   );

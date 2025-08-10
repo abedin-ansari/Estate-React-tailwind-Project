@@ -5,7 +5,10 @@ const LogoutButton = () => {
   const handleLogout = () => signOut(auth);
 
   return (
-    <button onClick={handleLogout} className="btn-logout">
+    <button
+      onClick={handleLogout}
+      className="bg-red-500 px-8 py-3 hover:bg-red-600 cursor-pointer rounded-full"
+    >
       Logout
     </button>
   );
