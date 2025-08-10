@@ -8,6 +8,7 @@ import {
 } from "firebase/auth";
 import { checkValidateData } from "../../utils/validate";
 import { toast, ToastContainer } from "react-toastify";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import "react-toastify/dist/ReactToastify.css";
 import ForgotPassword from "./ForgotPassword";

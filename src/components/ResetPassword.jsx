@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { auth } from "../../utils/firebase";
 import { confirmPasswordReset, verifyPasswordResetCode } from "firebase/auth";
 import { toast } from "react-toastify";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { useSearchParams } from "react-router-dom";
 
@@ -27,6 +28,7 @@ const ResetPassword = () => {
     try {
       await verifyPasswordResetCode(auth, code);
       setIsValidCode(true);
+      // eslint-disable-next-line no-unused-vars
     } catch (error) {
       toast.error("Invalid or expired reset link");
       setIsValidCode(false);
@@ -56,6 +58,7 @@ const ResetPassword = () => {
       setTimeout(() => {
         window.location.href = "/login";
       }, 2000);
+       
     } catch (error) {
       toast.error(error.message);
     } finally {

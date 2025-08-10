@@ -1,5 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -24,7 +25,6 @@ const Contact = () => {
       toast.success("form submitted successfully!");
       event.target.reset();
     } else {
-      console.log("Error", data);
       toast.error(data.message || "Something went wrong");
       setResult("");
     }
@@ -32,17 +32,16 @@ const Contact = () => {
 
   return (
     <motion.div
-      initial={{ opaccity: 0, x: -200 }}
+      initial={{ opacity: 0, x: -200 }}
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      // Animation
       className="text-center p-6 py-20 lg:px-32 w-full overflow-hidden"
       id="Contact"
     >
       <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
         Contact
-        <span className="underline underline-offset-4 decoration-1 under font-light">
+        <span className="underline underline-offset-4 decoration-1 font-light">
           With us
         </span>
       </h1>

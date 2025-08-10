@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { auth } from "../../utils/firebase";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { toast } from "react-toastify";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const ForgotPassword = ({ isOpen, onClose }) => {

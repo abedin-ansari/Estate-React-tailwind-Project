@@ -1,22 +1,21 @@
 import React from "react";
 import { assets } from "../assets/assets";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const About = () => {
   return (
     <motion.div
-      //Animation
-      initial={{ opaccity: 0, x: 200 }}
+      initial={{ opacity: 0, x: 200 }}
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      // Animation
       className="flex flex-col items-center justify-center container mx-auto p-14 md:px-20 lg:px-32 w-full overflow-hidden"
       id="About"
     >
       <h1 className="text-2xl sm:text-4xl font-bold mb-2 ">
         About{" "}
-        <span className="underline underline-offset-4 decoration-1 under font-light">
+        <span className="underline underline-offset-4 decoration-1 font-light">
           Our brand
         </span>
       </h1>

@@ -1,21 +1,21 @@
 import React from "react";
 import { assets, testimonialsData } from "../assets/assets";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 const Testimonials = () => {
   return (
     <motion.div
-      initial={{ opaccity: 0, x: 200 }}
+      initial={{ opacity: 0, x: 200 }}
       transition={{ duration: 1 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
-      // Animation
       className="container mx-auto py-10 lg:px-32 px-6 md:px-20 w-full overflow-hidden"
       id="Testimonials"
     >
       <h1 className="text-2xl sm:text-4xl font-bold mb-2 text-center">
-        Costomer
-        <span className="underline underline-offset-4 decoration-1 under font-light">
+        Customer
+        <span className="underline underline-offset-4 decoration-1 font-light">
           Testimonials
         </span>
       </h1>

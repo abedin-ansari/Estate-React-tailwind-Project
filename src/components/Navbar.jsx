@@ -11,7 +11,6 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Manage body scroll on mobile menu toggle
     if (showMobileMenu) {
       document.body.style.overflow = "hidden";
     } else {
@@ -23,7 +22,6 @@ const Navbar = () => {
   }, [showMobileMenu]);
 
   useEffect(() => {
-    // Listen for Firebase auth state changes
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
@@ -33,10 +31,8 @@ const Navbar = () => {
   return (
     <div className="absolute top-0 left-0 w-full z-10">
       <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent">
-        {/* Logo */}
         <img src={assets.logo} alt="logo" />
 
-        {/* Desktop Menu */}
         <ul className="hidden md:flex gap-7 text-white text-lg">
           <a href="#Header" className="cursor-pointer hover:bg-gray-500">
             Home
@@ -52,7 +48,6 @@ const Navbar = () => {
           </a>
         </ul>
 
-        {/* Conditionally render Sign-up or Logout button */}
         {user ? (
           <LogoutButton />
         ) : (
@@ -64,7 +59,6 @@ const Navbar = () => {
           </button>
         )}
 
-        {/* Mobile menu icon */}
         <img
           src={assets.menu_icon}
           alt="menu"
@@ -73,11 +67,10 @@ const Navbar = () => {
         />
       </div>
 
-      {/* -------- Mobile Menu -------- */}
       <div
         className={`md:hidden ${
           showMobileMenu ? "fixed w-full" : "h-0 w-0"
-        } r-0 top-0 bottom-0 overflow-hidden bg-gray-400 transition-all`}
+        } right-0 top-0 bottom-0 overflow-hidden bg-gray-400 transition-all`}
       >
         <div className="flex justify-end p-6 cursor-pointer">
           <img
