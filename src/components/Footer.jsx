@@ -20,13 +20,13 @@ const Footer = () => {
         <div className="mb-8 md:mb-0 w-full md:w-1/5">
           <h3 className="text-white text-lg font-bold mb-4">Company</h3>
           <ul className="flex flex-col gap-2 text-gray-400">
-            <a href="Header" className="hover:text-white">
+            <a href="#Header" className="hover:text-white">
               Home
             </a>
-            <a href="About" className="hover:text-white">
+            <a href="#About" className="hover:text-white">
               About us
             </a>
-            <a href="Contact" className="hover:text-white">
+            <a href="#Contact" className="hover:text-white">
               Contact us
             </a>
             <a href="#" className="hover:text-white">

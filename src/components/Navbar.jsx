@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { assets } from "../assets/assets";
+import LogoutButton from "./LogoutButton";
 
 const Navbar = () => {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
@@ -36,6 +37,7 @@ const Navbar = () => {
         <button className="hidden md:block bg-white px-8 py-2 rounded-full">
           Sign-up
         </button>
+        <LogoutButton />
         <img
           src={assets.menu_icon}
           alt="menu"
@@ -60,28 +62,28 @@ const Navbar = () => {
         </div>
         <ul className="flex flex-col items-center gap-2 mt-5 mx-5 text-lg font-medium">
           <a
-            href="Header"
+            href="#Header"
             className="px-4 py-2 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
             Home
           </a>
           <a
-            href="About"
+            href="#About"
             className="px-4 py-2 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
             About
           </a>
           <a
-            href="projects"
+            href="#Projects"
             className="px-4 py-2 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
             Projects
           </a>
           <a
-            href="testimonials"
+            href="#Testimonials"
             className="px-4 py-2 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >

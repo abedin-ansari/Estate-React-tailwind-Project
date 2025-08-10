@@ -27,7 +27,7 @@ const Header = () => {
             Projects
           </a>
           <a
-            href="#Contacts"
+            href="#Contact"
             className="bg-blue-500 px-8 py-3 rounded hover:bg-blue-600"
           >
             Contact-us
