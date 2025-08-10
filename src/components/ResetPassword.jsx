@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "@utils/firebase";
+import { auth } from "@utils/firebase.js";
 import { confirmPasswordReset, verifyPasswordResetCode } from "firebase/auth";
 import { toast } from "react-toastify";
 // eslint-disable-next-line no-unused-vars
@@ -58,7 +58,6 @@ const ResetPassword = () => {
       setTimeout(() => {
         window.location.href = "/login";
       }, 2000);
-       
     } catch (error) {
       toast.error(error.message);
     } finally {
