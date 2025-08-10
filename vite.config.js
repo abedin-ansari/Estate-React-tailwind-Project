@@ -7,10 +7,19 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
-      "@": "/src",
-      "@assets": "/src/assets",
-      "@components": "/src/components",
-      "@utils": "/utils",
+      "@": "./src",
+      "@assets": "./src/assets",
+      "@components": "./src/components",
+      "@utils": "./utils",
+    },
+  },
+  build: {
+    target: "esnext",
+    modulePreload: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
     },
   },
 });
