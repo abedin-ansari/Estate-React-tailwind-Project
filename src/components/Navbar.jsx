@@ -20,16 +20,16 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center py-4 px-6 md:px-20 lg:px-32 bg-transparent">
         <img src={assets.logo} alt="logo" />
         <ul className="hidden md:flex gap-7 text-white text-lg">
-          <a href="#header" className="cursor-pointer hover:bg-gray-500">
+          <a href="#Header" className="cursor-pointer hover:bg-gray-500">
             Home
           </a>
-          <a href="#about" className="cursor-pointer hover:bg-gray-500">
+          <a href="#About" className="cursor-pointer hover:bg-gray-500">
             About
           </a>
-          <a href="#projects" className="cursor-pointer hover:bg-gray-500">
+          <a href="#Projects" className="cursor-pointer hover:bg-gray-500">
             Projects
           </a>
-          <a href="#testimonials" className="cursor-pointer hover:bg-gray-500">
+          <a href="#Testimonials" className="cursor-pointer hover:bg-gray-500">
             Testimonials
           </a>
         </ul>
@@ -60,14 +60,14 @@ const Navbar = () => {
         </div>
         <ul className="flex flex-col items-center gap-2 mt-5 mx-5 text-lg font-medium">
           <a
-            href="header"
+            href="Header"
             className="px-4 py-2 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >
             Home
           </a>
           <a
-            href="about"
+            href="About"
             className="px-4 py-2 rounded-full inline-block"
             onClick={() => setShowMobileMenu(false)}
           >

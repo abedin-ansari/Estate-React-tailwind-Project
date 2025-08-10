@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "./Navbar";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
@@ -9,7 +10,15 @@ const Header = () => {
       id="Header"
     >
       <Navbar />
-      <div className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white">
+      {/* Animation */}
+      <motion.div
+        initial={{ opaccity: 0, y: 100 }}
+        transition={{ duration: 1.5 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        // Animation
+        className="container text-center mx-auto py-4 px-6 md:px-20 lg:px-32 text-white"
+      >
         <h2 className="text-5xl sm:text-6xl ms:text-[82px] inline-block max-w-3xl font-semibold pt-20">
           Explore homes that fit your dreams
         </h2>
@@ -17,11 +26,14 @@ const Header = () => {
           <a href="#Projects" className="border border-white px-8 py-3 rounded">
             Projects
           </a>
-          <a href="#Contacts" className="bg-blue-500 px-8 py-3 rounded">
+          <a
+            href="#Contacts"
+            className="bg-blue-500 px-8 py-3 rounded hover:bg-blue-600"
+          >
             Contact-us
           </a>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
