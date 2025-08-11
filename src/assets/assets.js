@@ -82,12 +82,12 @@ export const testimonialsData = [
     text: "From the very first meeting, they understood my vision and helped me find the perfect property. Their attention to detail and commitment to client satisfaction is unmatched.",
   },
   {
-    name: "Munchun🩷",
+    name: "Akhilesh Gupta",
     title: "User",
     image: profile_img_2,
     alt: "Portrait of Richard Nelson",
     rating: 5,
-    text: "Maine Ye Website Dekha, Mujhe Ye Bahut Pasand Aaya. Maine Isse Apne Doston Ke Sath Share Kiya.",
+    text: "Exceptional service and great support throughout the process. They were attentive, professional, and made everything so easy. Highly recommend to anyone looking for reliable assistance!",
   },
   {
     name: "James Washington",

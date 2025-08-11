@@ -11,10 +11,12 @@ const Footer = () => {
         <div className="mb-8 md:mb-0 w-full md:w-1/3">
           <img src={assets.logo_dark} alt="logo_dark" />
           <p className="text-gray-400 mt-4">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+            Dedicated to helping you find the perfect property, we combine
+            expertise with personalized service to deliver exceptional real
+            estate solutions you can trust. Our team is committed to guiding you
+            every step of the way, ensuring a smooth and transparent experience.
+            Whether buying, selling, or investing, we provide tailored
+            strategies to meet your unique needs and goals.
           </p>
         </div>
         <div className="mb-8 md:mb-0 w-full md:w-1/5">

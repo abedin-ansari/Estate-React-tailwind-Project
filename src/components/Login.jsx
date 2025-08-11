@@ -69,7 +69,7 @@ const Login = () => {
       }
       setErrorMessage(null);
 
-      // Navigate to home after short delay so toast can be seen
+      // Navigate to home
       setTimeout(() => {
         navigate("/");
       }, 1000);
