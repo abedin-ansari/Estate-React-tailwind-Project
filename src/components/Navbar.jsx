@@ -50,6 +50,15 @@ const Navbar = () => {
           </a>
         </ul>
 
+        {!user && (
+          <button
+            onClick={() => navigate("/login")}
+            className="md:hidden bg-white px-6 py-2 rounded-full cursor-pointer hover:bg-gray-200 mr-4"
+          >
+            Sign-up
+          </button>
+        )}
+
         {user ? (
           <LogoutButton />
         ) : (
@@ -113,20 +122,7 @@ const Navbar = () => {
             Testimonials
           </a>
 
-          {/* Mobile Sign-up or Logout button */}
-          {user ? (
-            <LogoutButton />
-          ) : (
-            <button
-              onClick={() => {
-                setShowMobileMenu(false);
-                navigate("/login");
-              }}
-              className="bg-white px-8 py-2 rounded-full mt-4"
-            >
-              Sign-up
-            </button>
-          )}
+          {user && <LogoutButton />}
         </ul>
       </div>
     </div>
