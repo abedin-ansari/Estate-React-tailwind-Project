@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { assets } from "../assets/assets.js";
+import { assets } from "@assets/assets.js";
 import LogoutButton from "./LogoutButton";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../utils/firebase.js";
+import { auth } from "@utils/firebase.js";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { onAuthStateChanged } from "firebase/auth";
