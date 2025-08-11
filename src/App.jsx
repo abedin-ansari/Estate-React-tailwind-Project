@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { auth } from "../utils/firebase";
-import { onAuthStateChanged } from "firebase/auth";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
-import Login from "./components/Login";
-import ResetPassword from "./components/ResetPassword";
+import { auth } from "../utils/firebase.js";
+import { onAuthStateChanged } from "firebase/auth";
+import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import Login from "./components/Login";
+import ResetPassword from "./components/ResetPassword";
 
 const MainApp = ({ user }) => (
   <>
