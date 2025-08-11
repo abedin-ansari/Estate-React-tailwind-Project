@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { auth } from "/utils/firebase.js";
+import { auth } from "../../utils/firebase.js";
 import { confirmPasswordReset, verifyPasswordResetCode } from "firebase/auth";
 import { toast } from "react-toastify";
+import { useNavigate, useSearchParams } from "react-router-dom";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { useSearchParams } from "react-router-dom";
 
 const ResetPassword = () => {
   const [searchParams] = useSearchParams();

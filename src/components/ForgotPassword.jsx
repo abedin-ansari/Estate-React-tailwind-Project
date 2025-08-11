@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { auth } from "/utils/firebase.js";
+import { auth } from "../../utils/firebase.js";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { toast } from "react-toastify";
 // eslint-disable-next-line no-unused-vars
