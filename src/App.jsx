@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { auth } from "@utils/firebase.js";
+import { auth } from "../utils/firebase.js";
 import { onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
