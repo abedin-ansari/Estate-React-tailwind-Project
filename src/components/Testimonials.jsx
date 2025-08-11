@@ -1,5 +1,5 @@
 import React from "react";
-import { assets, testimonialsData } from "../assets/assets";
+import { assets, testimonialsData } from "../assets/assets.js";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
